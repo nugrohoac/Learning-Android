@@ -39,7 +39,7 @@ public class SplashScreen extends AppCompatActivity {
                 SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
                 SharedPreferences.Editor editor = pref.edit();
 
-                editor.putInt("isLogin", 0); // Storing integer
+                editor.putInt("isLogin", 1); // Storing integer
                 editor.putString("username", "iniUsername"); // Storing string
                 editor.putString("password", "iniPassword"); // Storing string
                 editor.commit(); // commit changes

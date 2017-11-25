@@ -26,12 +26,33 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Delete" />
+
+        <Button
+            android:id="@+id/btn_API"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Laporan" />
+
+        <Button
+            android:id="@+id/btn_Infi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Infi" />
+
+        <Button
+            android:id="@+id/btn_Swipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Swipe" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycleviewTemp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="5dp" />
 
 </LinearLayout>

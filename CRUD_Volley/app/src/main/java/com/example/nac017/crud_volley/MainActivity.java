@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager mManager;
     List<ModelData> mItems;
-    Button btnInsert, btnDelete;
+    Button btnInsert, btnDelete, btnAPI, btnInfi, btnSwipe;
     ProgressDialog pd;
 
     @Override
@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycleviewTemp);
         btnInsert = (Button) findViewById(R.id.btn_insert);
         btnDelete = (Button) findViewById(R.id.btn_delete);
+        btnAPI = (Button) findViewById(R.id.btn_API);
+        btnInfi = (Button) findViewById(R.id.btn_Infi);
+        btnSwipe = (Button) findViewById(R.id.btn_Swipe);
         pd = new ProgressDialog(MainActivity.this);
         mItems = new ArrayList<>();
 
@@ -71,6 +74,13 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new AdapterData(MainActivity.this, mItems);
         mRecyclerView.setAdapter(mAdapter);
 
+        btnSwipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SwipeImageActivity.class));
+            }
+        });
+
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,18 +95,32 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Delete.class));
             }
         });
+
+        btnAPI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LaporanHarga.class));
+            }
+        });
+
+        btnInfi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, InfiniteScroll.class));
+            }
+        });
     }
 
     private void loadJson() {
         pd.setMessage("Mengambil Data");
         pd.setCancelable(false);
         pd.show();
-        JsonArrayRequest reqData = new JsonArrayRequest(Request.Method.POST, ServerAPI.URL_DATA,
+        JsonArrayRequest reqData = new JsonArrayRequest(Request.Method.GET, ServerAPI.URL_DATA,
                 null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 pd.cancel();
-                Log.d("volley", "response: " + response.toString());
+                Log.d("volley", "response cuk: " + response.toString());
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         JSONObject data = response.getJSONObject(i);

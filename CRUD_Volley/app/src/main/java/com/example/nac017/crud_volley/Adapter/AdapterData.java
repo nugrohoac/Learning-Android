@@ -6,12 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.example.nac017.crud_volley.InsertData;
-import com.example.nac017.crud_volley.MainActivity;
 import com.example.nac017.crud_volley.Model.ModelData;
 import com.example.nac017.crud_volley.R;
 

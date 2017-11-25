@@ -12,4 +12,7 @@ public class ServerAPI {
     public static final String URL_DELETE = "http://192.168.56.1/crud_android/delete_data.php";
     public static final String URL_UPDATE = "http://192.168.56.1/crud_android/update_data.php";
     //public static final String URL_UPDATE = "http://192.168.56.1/crud_android/update_data.php";
+
+    public static final String TEST = "https://api.bukalapak.com/v2/products.json?keywords=fixied&page=";
+    public static final String URL_IMAGE = "https://api.androidhive.info/json/glide.json";
 }

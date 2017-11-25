@@ -123,6 +123,15 @@ public class InsertData extends AppCompatActivity {
                 Log.d("volley", "data: " + map.toString());
                 return map;
             }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<>();
+                String auth = "token  harusnya";
+                headers.put("Authorization", auth);
+                Log.d("token","ini token :" + auth);
+                return headers;
+            }
         };
 
         AppController.getInstance().addToRequestQueue(updateReq);
@@ -167,6 +176,15 @@ public class InsertData extends AppCompatActivity {
                 map.put("fakultas", fakultas.getText().toString());
                 Log.d("volley", "data: " + map.toString());
                 return map;
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<>();
+                String auth = "Bearer hanta text";
+                headers.put("Authorization", auth);
+                Log.d("token","ini token :" + auth);
+                return headers;
             }
         };
 
